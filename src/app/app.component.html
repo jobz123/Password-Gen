@@ -1,0 +1,61 @@
+<div class="container">
+  <div class="title">Password Generator</div>
+  <div class="block password-block">
+    <label id="password" style="color: white;">{{password}}</label>
+    <img (click)="copyToClipboard()" src="assets/images/copy-icon.png" alt="" width="15"
+      class="text-white right-2.5 top-2.5 absolute cursor-pointer" title="click to copy">
+  </div>
+  <div class="block options-block">
+    <div class="container-fluid">
+      <div>
+        <ngx-slider [(value)]="sliderValue" [options]="options"></ngx-slider>
+      </div>
+      <div class="option-block">
+        <label class="checkbox-container">
+          <input (change)="onChangeUseUpperLetters()" type="checkbox" class="form-check-input" id="use-Upperletters"
+            [checked]="includeUpperCaseLetters">
+          Include Uppercase Letters
+          <span class="checkmark"></span>
+        </label>
+      </div>
+      <div class="option-block">
+        <label class="checkbox-container">
+          <input (change)="onChangeUseLowerLetters()" type="checkbox" class="form-check-input" id="use-letters"
+            [checked]="includeLowerCaseLetters">
+          Include Lowercase Letters
+          <span class="checkmark"></span>
+        </label>
+      </div>
+      <div class="option-block">
+        <label class="checkbox-container">
+          <input (change)="onChangeUseNumbers()" type="checkbox" class="form-check-input" id="use-numbers"
+            [checked]="includeNumbers"> Include
+          Numbers
+          <span class="checkmark"></span>
+        </label>
+      </div>
+      <div class="option-block">
+        <label class="checkbox-container">
+          <input (change)="onChangeUseSymbols()" type="checkbox" class="form-check-input" id="use-symbols"
+            [checked]="includeSymbols"> Include
+          Symbols
+          <span class="checkmark"></span>
+        </label>
+      </div>
+      <div class="strength-container row" style="margin-left: 0px;margin-right: 0px;">
+        <div class="col-md-2">
+          <label>STRENGTH</label>
+        </div>
+        <div class="col-md-8">
+          <label class="strength-label">{{passwordStrength}}</label>
+          <password-strength-meter [minPasswordLength]="6" [password]="password"
+            [colors]="['darkred', 'orangered', 'yellowgreen']" [numberOfProgressBarItems]="3">
+          </password-strength-meter>
+        </div>
+      </div>
+      <button [disabled]="disabledBth()" (click)="generatePassword()" class="button btn">
+        GENERATE
+      </button>
+    </div>
+  </div>
+</div>

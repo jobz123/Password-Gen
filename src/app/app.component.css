@@ -1,0 +1,93 @@
+.title{
+  text-align: center;
+  color: white;
+  font-family: monospace;
+}
+.container {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px;
+  width: 365px;
+}
+.block {
+  background: #24232b;
+  border-radius: 2px;
+  padding: 10px;
+  margin-top: 10px;
+  font-family: monospace;
+}
+.password-block {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.options-block {
+  background: #24232b;
+  border-radius: 2px;
+  padding: 10px;
+  margin-top: 10px;
+  color: #b2b2b2;
+  font-size: medium;
+}
+.strength-container {
+  background: #131313;
+  border-radius: 2px;
+  margin-top: 10px;
+  align-items: center;
+  padding: 10px;
+  justify-content: space-between;
+}
+.option-block {
+  padding-top: 10px;
+  color: white;
+}
+
+.btn {
+  height: 50px;
+  border-radius: 2px;
+  margin-top: 10px;
+  font-weight: 700;
+  color: #a3ffaa;
+  border-color: #a3ffaa;
+  background-color: transparent;
+  width: 100%;
+  font-family: monospace;
+}
+
+.btn:hover {
+  /* background: #80eda7; */
+  background-color: #a3ffaa;
+  color: black;
+}
+
+:host ::ng-deep  {
+  .psm__progress-bar {
+    height: 25px !important;
+    width: 20% !important;
+    float: right !important;
+
+    .psm__progress-bar-items {
+      justify-content: space-between !important;
+
+      .psm__progress-bar-item {
+        flex: 1 !important;
+        border-right: 4px solid #18171F;
+      }
+    }
+
+    .psm__progress-bar-overlay {
+      height: 25px !important;
+    }
+  }
+
+  .strength-label{
+    font-weight: 600;
+    text-transform: uppercase;
+    position: relative;
+    padding-top: 6%;
+    padding-left: 35%;
+    font-size: large;
+  }
+}
